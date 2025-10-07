@@ -1,0 +1,7 @@
+number = int(input("Введите целое число: 15"))
+
+next_number = number + 1
+previous_number = number - 1
+
+print("Следующее число: " + str(next_number))
+print("Предыдущее число: " + str(previous_number))
