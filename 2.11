@@ -1,0 +1,12 @@
+def calculate_density():
+    mass = float(input("Введите массу тела (кг): "))
+    volume = float(input("Введите объем тела (м³): "))
+    
+    if volume == 0:
+        print("Ошибка: объем не может быть равен нулю!")
+        return
+    
+    density = mass / volume
+    print(f"Плотность материала: {density:.2f} кг/м³")
+
+calculate_density()
