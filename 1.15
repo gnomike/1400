@@ -1,0 +1,3 @@
+print("Введите четыре числа:")
+numbers = [float(input()) for _ in range(4)]
+print(*numbers)
