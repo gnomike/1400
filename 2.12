@@ -1,0 +1,12 @@
+def calculate_population_density():
+ population = float(input("Введите количество жителей (человек): "))
+ area = float(input("Введите площадь территории (км²): "))
+ 
+ if area == 0:
+ print("Ошибка: площадь территории не может быть равна нулю!")
+ return
+ 
+ density = population / area
+ print(f"Плотность населения: {density:.2f} чел/км²")
+
+calculate_population_density()
