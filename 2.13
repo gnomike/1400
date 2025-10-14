@@ -1,0 +1,12 @@
+def solve_linear_equation():
+    a = float(input("Введите коэффициент a (a ≠ 0): "))
+    if a == 0:
+        print("Ошибка: коэффициент a не может быть равен нулю!")
+        return
+    
+    b = float(input("Введите коэффициент b: "))
+    
+    x = -b / a
+    print(f"Решение уравнения: x = {x}")
+
+solve_linear_equation()
