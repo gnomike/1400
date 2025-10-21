@@ -1,0 +1,16 @@
+import math
+
+def find_perimeter():
+    a = float(input("Введите длину первого катета: "))
+    b = float(input("Введите длину второго катета: "))
+    
+    if a <= 0 or b <= 0:
+        print("Ошибка: длины катетов должны быть положительными!")
+        return
+    
+    c = math.sqrt(a**2 + b**2)  # находим гипотенузу
+    perimeter = a + b + c      # вычисляем периметр
+    
+    print(f"Периметр треугольника: {perimeter:.2f}")
+
+find_perimeter()
