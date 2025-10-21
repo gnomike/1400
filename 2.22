@@ -1,0 +1,15 @@
+import math
+
+# Ввод двух чисел
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+
+# Вычисление среднего арифметического модулей
+average_arithmetic = (abs(a) + abs(b)) / 2
+
+# Вычисление среднего геометрического модулей
+average_geometric = math.sqrt(abs(a) * abs(b))
+
+# Вывод результатов
+print(f"Среднее арифметическое модулей: {average_arithmetic}")
+print(f"Среднее геометрическое модулей: {average_geometric}")
