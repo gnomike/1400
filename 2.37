@@ -1,0 +1,13 @@
+def fahrenheit_to_celsius(fahrenheit):
+    # Переводим температуру в Цельсий
+    celsius = 5/9 * (fahrenheit - 32)
+    return celsius
+
+# Температура из названия романа
+fahrenheit_temp = 451
+
+# Вычисление температуры в Цельсиях
+celsius_temp = fahrenheit_to_celsius(fahrenheit_temp)
+
+# Вывод результата
+print(f"Температура {fahrenheit_temp}°F соответствует {celsius_temp:.2f}°C")
