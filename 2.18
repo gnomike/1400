@@ -1,0 +1,27 @@
+import math
+
+def calculate_functions(x, y):
+    # Вычисление числителя и знаменателя для z
+    numerator = x + (2 + y) / (x ** 2)
+    denominator = y + 1 / math.sqrt(x ** 2 + 10)
+
+    # Проверка, что знаменатель не равен нулю
+    if denominator == 0:
+        raise ValueError("Знаменатель равен нулю, деление невозможно.")
+
+    # Вычисление z и q
+    z = numerator / denominator
+    q = 7.25 * math.sin(x) - abs(y)
+
+    return z, q
+
+# Пример использования
+x = float(input("Введите x: "))
+y = float(input("Введите y: "))
+
+try:
+    z, q = calculate_functions(x, y)
+    print(f"z = {z}")
+    print(f"q = {q}")
+except ValueError as e:
+    print(e)
