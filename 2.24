@@ -1,0 +1,24 @@
+# Ввод двух чисел
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+
+# Вычисление суммы
+sum_result = a + b
+
+# Вычисление разности
+difference = a - b
+
+# Вычисление произведения
+product = a * b
+
+# Вычисление частного
+if b != 0:
+    quotient = a / b
+else:
+    quotient = "Деление на ноль невозможно"
+
+# Вывод результатов
+print(f"Сумма: {sum_result}")
+print(f"Разность: {difference}")
+print(f"Произведение: {product}")
+print(f"Частное: {quotient}")
