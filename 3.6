@@ -1,0 +1,10 @@
+# Ввод номера места
+seat_number = int(input("Введите номер места: "))
+
+# Проверка корректности ввода
+if seat_number < 1 or seat_number > 36:
+    print("Ошибка: в вагоне всего 36 мест (от 1 до 36)")
+else:
+    # Вычисление номера купе
+    compartment_number = (seat_number - 1) // 4 + 1
+    print(f"Место находится в купе №{compartment_number}")
