@@ -1,0 +1,15 @@
+# Ввод возрастов
+x = int(input("Введите возраст Тани: "))
+y = int(input("Введите возраст Мити: "))
+
+# Вычисление среднего возраста
+average_age = (x + y) / 2
+
+# Вычисление разницы возрастов
+difference_tanya = abs(x - average_age)
+difference_mitya = abs(y - average_age)
+
+# Вывод результатов
+print(f"\nСредний возраст: {average_age:.1f} лет")
+print(f"Разница возраста Тани со средним: {difference_tanya:.1f} лет")
+print(f"Разница возраста Мити со средним: {difference_mitya:.1f} лет")
