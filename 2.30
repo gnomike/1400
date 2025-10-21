@@ -1,0 +1,29 @@
+def triangle_area(x1, y1, x2, y2, x3, y3):
+    # Вычисление площади треугольника по координатам вершин
+    return 0.5 * abs((x1 - x3) * (y2 - y3) - (y1 - y3) * (x2 - x3))
+
+def quadrilateral_area():
+    # Ввод координат вершин
+    print("Введите координаты первой вершины (x1 y1):")
+    x1, y1 = map(float, input().split())
+    print("Введите координаты второй вершины (x2 y2):")
+    x2, y2 = map(float, input().split())
+    print("Введите координаты третьей вершины (x3 y3):")
+    x3, y3 = map(float, input().split())
+    print("Введите координаты четвертой вершины (x4 y4):")
+    x4, y4 = map(float, input().split())
+    
+    # Разбиваем четырехугольник на два треугольника
+    # Например, по диагонали AC
+    area1 = triangle_area(x1, y1, x2, y2, x3, y3)  # Площадь треугольника ABC
+    area2 = triangle_area(x1, y1, x3, y3, x4, y4)  # Площадь треугольника ACD
+    
+    # Общая площадь
+    total_area = area1 + area2
+    
+    print(f"\nПлощадь треугольника ABC: {area1:.2f}")
+    print(f"Площадь треугольника ACD: {area2:.2f}")
+    print(f"Общая площадь четырехугольника: {total_area:.2f}")
+
+# Запуск программы
+quadrilateral_area()
