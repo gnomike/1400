@@ -1,0 +1,13 @@
+# Ввод чисел
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+# Вычисления
+summa = a + b
+raznost = a - b
+proizved = a * b
+chastnoe = a / b
+srednee = (a + b) / 2
+
+# Вывод результатов в требуемом формате
+print(f"{a}+{b}={summa} {a}-{b}={raznost} {a}*{b}={proizved} {a}/{b}={chastnoe} ({a}+{b})/2={srednee}")
