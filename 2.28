@@ -1,0 +1,27 @@
+import math
+
+def find_trapezoid_area():
+    # Ввод данных
+    a = float(input("Введите длину меньшего основания: "))
+    b = float(input("Введите длину большего основания: "))
+    alpha_degrees = float(input("Введите угол при большем основании (в градусах): "))
+    
+    # Проверка корректности входных данных
+    if a <= 0 or b <= 0 or a >= b or alpha_degrees <= 0 or alpha_degrees >= 180:
+        print("Ошибка: основания должны быть положительными, "
+              "большее основание должно быть больше меньшего, "
+              "угол должен быть в диапазоне (0, 180) градусов!")
+        return
+    
+    # Перевод угла в радианы
+    alpha_radians = math.radians(alpha_degrees)
+    
+    # Вычисление площади
+    try:
+        area = ((b**2 - a**2) * math.tan(alpha_radians)) / 4
+        print(f"Площадь трапеции: {area:.2f}")
+    except ValueError:
+        print("Ошибка при вычислении тангенса угла")
+
+# Запуск программы
+find_trapezoid_area()
