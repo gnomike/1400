@@ -1,0 +1,14 @@
+import math
+
+def calculate_ring_area():
+    R = float(input("Введите внешний радиус: "))
+    r = float(input("Введите внутренний радиус: "))
+    
+    if R <= r or R <= 0 or r < 0:
+        print("Ошибка: внешний радиус должен быть больше внутреннего и оба радиуса должны быть положительными!")
+        return
+    
+    area = math.pi * (R**2 - r**2)
+    print(f"Площадь кольца: {area:.2f}")
+
+calculate_ring_area()
