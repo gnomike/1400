@@ -1,0 +1,17 @@
+k = int(input("Введите номер квартиры: "))
+
+# Номер подъезда (1–4)
+entrance = (k - 1) // 54 + 1
+
+# Смещение внутри подъезда (0–53)
+offset_in_entrance = (k - 1) % 54
+
+# Номер этажа в подъезде (1–9)
+floor = offset_in_entrance // 6 + 1
+
+# Номер квартиры на этаже (1–6)
+position_on_floor = (k - 1) % 6 + 1
+
+print(f: {entrance}")
+print(f: {floor}")
+print(f: {position_on_floor}")
