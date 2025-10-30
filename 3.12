@@ -1,0 +1,7 @@
+k = int(input("Введите номер квартиры: "))
+
+floor = (k - 1) // 4 + 1
+position_on_floor = (k - 1) % 4 + 1
+
+print(f"Этаж: {floor}")
+print(f"Номер на этаже: {position_on_floor}")
