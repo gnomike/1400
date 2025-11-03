@@ -1,0 +1,11 @@
+
+number = int(input("Введите двузначное число: "))
+
+tens = number // 10
+
+
+units = number % 10
+
+reversed_number = units * 10 + tens
+
+print(f"Число с переставленными цифрами: {reversed_number}")
