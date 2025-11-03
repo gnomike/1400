@@ -1,0 +1,11 @@
+
+number = int(input("Введите двузначное число: "))
+
+tens = number // 10
+
+units = number % 10
+
+sum_of_digits = tens + units
+
+# Выводим результат
+print(f"Сумма цифр числа {number} равна {sum_of_digits}")
