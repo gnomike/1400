@@ -1,0 +1,11 @@
+number = input("Введите трёхзначное число (все цифры различны): ")
+
+
+a, b, c = number[0], number[1], number[2] 
+
+print(a + b + c)  # abc
+print(a + c + b)  # acb
+print(b + a + c)  # bac
+print(b + c + a)  # bca
+print(c + a + b)  # cab
+print(c + b + a)  # cba
