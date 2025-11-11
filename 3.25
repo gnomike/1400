@@ -1,0 +1,5 @@
+number = input("Введите трёхзначное число: ")
+
+result = number[0] + number[2] + number[1]
+
+print(f"Полученное число: {result}")
