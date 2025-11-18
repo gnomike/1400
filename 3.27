@@ -1,0 +1,40 @@
+def sum_of_digits_4():
+    while True:
+        try:
+            number = int(input("Введите 4‑значное число: "))
+            
+          
+            if 1000 <= number <= 9999:
+                break
+            else:
+                print("Ошибка: число должно быть 4‑значным (от 1000 до 9999). Попробуйте снова.")
+        except ValueError:
+            print("Ошибка: введите целое число. Попробуйте снова.")
+
+    digit_sum = 0
+    for digit_char in str(number):
+        digit_sum += int(digit_char)
+    
+    print(f"Сумма цифр числа {number} равна {digit_sum}")
+
+sum_of_digits_4()
+def sum_of_digits_5():
+    while True:
+        try:
+            number = int(input("Введите 5‑значное число: "))
+            
+        
+            if 10000 <= number <= 99999:
+                break
+            else:
+                print("Ошибка: число должно быть 5‑значным (от 10000 до 99999). Попробуйте снова.")
+        except ValueError:
+            print("Ошибка: введите целое число. Попробуйте снова.")
+    digit_sum = 0
+    for digit_char in str(number):
+        digit_sum += int(digit_char)
+    
+    print(f"Сумма цифр числа {number} равна {digit_sum}")
+
+
+sum_of_digits_5()
