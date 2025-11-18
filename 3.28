@@ -1,0 +1,15 @@
+n = int(input("Введите четырёхзначное число: "))
+A = n // 1000
+B = (n // 100) % 10
+C = (n // 10) % 10
+D = n % 10
+reversed_num = D * 1000 + C * 100 + B * 10 + A
+print("Число справа налево:", reversed_num)
+swapped_num = B * 1000 + A * 100 + D * 10 + C
+print("После перестановки пар:", swapped_num)
+swapped_mid = A * 1000 + C * 100 + B * 10 + D
+print("После перестановки второй и третьей цифр:", swapped_mid)
+AB = n // 100
+CD = n % 100
+swapped_pairs = CD * 100 + AB
+print("Способ 1 (с выделением цифр):", swapped_pairs)
