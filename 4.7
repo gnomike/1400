@@ -1,0 +1,22 @@
+import math
+
+# Ввод значения x от пользователя
+x = float(input("Введите значение x: "))
+
+# Вычисляем k в зависимости от sin(x)
+if math.sin(x) < 0:
+    k = x ** 2  # k = x^2, если sin(x) < 0
+else:
+    k = abs(x)  # k = |x|, если sin(x) >= 0
+
+# Вычисляем f(x) в зависимости от соотношения k и x
+if k < x:
+    f_x = k * x  # f(x) = kx, если k < x
+else:
+    f_x = k + x  # f(x) = k + x, если k >= x
+
+# Вывод результатов
+print(f"x = {x}")
+print(f"sin(x) = {math.sin(x):.4f}")
+print(f"k = {k}")
+print(f"f(x) = {f_x}")
