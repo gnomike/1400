@@ -1,0 +1,14 @@
+# Ввод данных
+distance_km = float(input("Введите расстояние в километрах: "))
+distance_feet = float(input("Введите расстояние в футах: "))
+
+# Переводим футы в километры
+distance_km_from_feet = (distance_feet * 0.3048) / 1000
+
+# Сравниваем расстояния
+if distance_km < distance_km_from_feet:
+    print(f"Расстояние в километрах ({distance_km} км) меньше, чем расстояние в футах ({distance_feet} футов).")
+elif distance_km > distance_km_from_feet:
+    print(f"Расстояние в футах ({distance_feet} футов) меньше, чем расстояние в километрах ({distance_km} км).")
+else:
+    print(f"Расстояния равны: {distance_km} км = {distance_feet} футов.")
