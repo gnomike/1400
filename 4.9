@@ -1,0 +1,15 @@
+# Ввод двух вещественных чисел
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+
+# Используем один условный оператор if-else для определения max и min
+if a > b:
+    maximum = a
+    minimum = b
+else:
+    maximum = b
+    minimum = a
+
+# Вывод результатов
+print(f"Максимальное значение: {maximum}")
+print(f"Минимальное значение: {minimum}")
