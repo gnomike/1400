@@ -1,0 +1,23 @@
+def calculate_y_a(x):
+    """Вычисляет y для графика а) по заданному x"""
+    if x < 2:
+        return x  # y = x
+    else:
+        return 2  # y = 2
+
+def calculate_y_b(x):
+    """Вычисляет y для графика б) по заданному x"""
+    if x < 3:
+        return -x  # y = -x
+    else:
+        return -3  # y = -3
+
+# Ввод значения x от пользователя
+x = float(input("Введите значение x: "))
+
+# Вычисление и вывод y для обоих графиков
+y_a = calculate_y_a(x)
+y_b = calculate_y_b(x)
+
+print(f"Для графика а) при x = {x}, y = {y_a}")
+print(f"Для графика б) при x = {x}, y = {y_b}")
