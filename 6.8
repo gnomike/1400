@@ -1,0 +1,10 @@
+n = int(input("Введите n: "))
+
+i = 1
+while i <= 100:
+    if i * i > n:
+        print(i)
+        break
+    i += 1
+else:
+    print("Число не найдено в диапазоне до 100")
