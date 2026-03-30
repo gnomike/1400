@@ -1,0 +1,12 @@
+correct_password = 1234  # Установленный пароль
+
+while True:
+    try:
+        password = int(input("Введите пароль (целое число): "))
+        if password == correct_password:
+            print("Добро пожаловать Вы успешно вошли в систему!")
+            break
+        else:
+            print("Ошибка: неверный пароль Попробуйте ещё раз.")
+    except ValueError:
+        print("Ошибка: введите целое число!")
