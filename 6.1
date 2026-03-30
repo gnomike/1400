@@ -1,0 +1,22 @@
+a = int(input("Введите a (a > b): "))
+b = int(input("Введите b (b > 0, a > b): "))
+
+# Проверка условия
+if a <= b or b == 0:
+    print("Ошибка: должно быть a > b и b > 0")
+else:
+    dividend = a
+    divisor = b
+
+    # а) Целочисленное деление (a // b) через вычитание
+    quotient = 0
+    temp = dividend
+    while temp >= divisor:
+        temp -= divisor
+        quotient += 1
+
+    # б) Остаток от деления (a % b) — это то, что осталось в temp
+    remainder = temp
+
+    print(f"Целочисленное деление {dividend} на {divisor}: {quotient}")
+    print(f"Остаток от деления {dividend} на {divisor}: {remainder}")
