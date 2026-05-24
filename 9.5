@@ -1,0 +1,30 @@
+# Количество работников и месяцев
+workers = 12
+months = 3
+
+# Создаём матрицу для хранения зарплат (12 строк × 3 столбца)
+salaries = [[0] * months for _ in range(workers)]
+
+print("Введите зарплаты работников по месяцам (по одному работнику за раз):")
+for i in range(workers):
+    print(f"Зарплаты работника {i + 1} за 3 месяца (через пробел): ", end="")
+    row = list(map(float, input().split()))
+    for j in range(months):
+        salaries[i][j] = row[j]
+
+# а) Общая сумма, выплаченная за квартал всем работникам
+total_sum = sum(sum(row) for row in salaries)
+print(f"\nа) Общая сумма за квартал: {total_sum:.2f} руб.")
+
+# б) Зарплата, полученная за квартал каждым работником
+print("\nб) Зарплаты работников за квартал:")
+for i in range(workers):
+    worker_sum = sum(salaries[i])
+    print(f"Работник {i + 1}: {worker_sum:.2f} руб.")
+
+# в) Общая зарплата всех работников за каждый месяц
+print("\nв) Общие зарплаты по месяцам:")
+for j in range(months):
+    month_sum = sum(salaries[i][j] for i in range(workers))
+    print(f"Месяц {j + 1}: {month_sum:.2f} руб.")
+
