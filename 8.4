@@ -1,0 +1,10 @@
+a = float(input("Введите число a (0 < a ≤ 1): "))
+
+n = 1
+while True:
+    current = 1 / n
+    if current < a:  # Нашли первое число, меньшее a
+        break
+    n += 1
+
+print(f"Первое число, меньшее {a}: {current} (это 1/{n})")
