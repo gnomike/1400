@@ -1,0 +1,33 @@
+# Количество спортсменов и программ
+athletes = 15
+programs = 3
+
+# Названия программ
+program_names = ["Обязательная", "Короткая", "Произвольная"]
+
+# Создаём матрицу для хранения баллов (15 строк × 3 столбца)
+scores = [[0] * programs for _ in range(athletes)]
+
+
+print("Введите баллы спортсменов по программам (по одному спортсмену за раз):")
+for i in range(athletes):
+    print(f"Баллы спортсмена {i + 1} за 3 программы (через пробел): ", end="")
+    row = list(map(float, input().split()))
+    for j in range(programs):
+        scores[i][j] = row[j]
+
+# а) Среднее количество баллов, полученных каждым спортсменом
+print("\nа) Средние баллы спортсменов:")
+athlete_averages = []
+for i in range(athletes):
+    athlete_sum = sum(scores[i])
+    athlete_average = athlete_sum / programs
+    athlete_averages.append(athlete_average)
+    print(f"Спортсмен {i + 1}: {athlete_average:.2f} баллов")
+
+# б) Среднее количество баллов по каждому виду программы
+print("\nб) Средние баллы по программам:")
+for j in range(programs):
+    program_sum = sum(scores[i][j] for i in range(athletes))
+    program_average = program_sum / athletes
+    print(f"{program_names[j]} программа: {program_average:.2f} баллов")
