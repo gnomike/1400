@@ -1,0 +1,29 @@
+# Количество учеников и предметов
+students = 15
+subjects = 3
+
+# Создаём матрицу для хранения оценок (15 строк × 3 столбца)
+marks = [[0] * subjects for _ in range(students)]
+
+print("Введите оценки учеников по предметам (по одному ученику за раз):")
+for i in range(students):
+    print(f"Оценки ученика {i + 1} по 3 предметам (через пробел): ", end="")
+    row = list(map(int, input().split()))
+    for j in range(subjects):
+        marks[i][j] = row[j]
+
+# а) Общее количество пятёрок в таблице
+total_fives = sum(1 for i in range(students) for j in range(subjects) if marks[i][j] == 5)
+print(f"\nа) Общее количество пятёрок: {total_fives}")
+
+# б) Количество троек у каждого ученика
+print("\nб) Количество троек у учеников:")
+for i in range(students):
+    threes_count = sum(1 for mark in marks[i] if mark == 3)
+    print(f"Ученик {i + 1}: {threes_count} троек")
+
+# в) Количество двоек по каждому предмету
+print("\nв) Количество двоек по предметам:")
+for j in range(subjects):
+    twos_count = sum(1 for i in range(students) if marks[i][j] == 2)
+    print(f"Предмет {j + 1}: {twos_count} двоек")
