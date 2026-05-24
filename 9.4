@@ -1,0 +1,21 @@
+# Количество учеников и предметов
+students = 12
+lessons = 3
+
+# Создаём матрицу для хранения оценок (12 строк × 3 столбца)
+marks = [[0] * lessons for _ in range(students)]
+
+# Ввод оценок по строкам
+print("Вводите оценки по строкам (по одному ученику за раз):")
+for i in range(students):
+    print(f"Оценки для ученика {i + 1} (через пробел): ", end="")
+    # Считываем строку, разбиваем на элементы и преобразуем в числа
+    row = list(map(int, input().split()))
+    # Сохраняем в матрицу
+    for j in range(lessons):
+        marks[i][j] = row[j]
+
+# Вычисляем сумму всех оценок
+total_sum = sum(sum(row) for row in marks)
+
+print(f"\nОбщая сумма всех оценок: {total_sum}")
