@@ -1,0 +1,9 @@
+a = float(input("Введите число a (0 < a ≤ 1): "))
+
+n = 1
+while True:
+    current = 1 / n
+    if current < a:  # Если число стало меньше a, выходим из цикла
+        break
+    print(current)
+    n += 1
