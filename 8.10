@@ -1,0 +1,16 @@
+a = float(input("Введите число a: "))
+
+
+n = 1  # Начинаем с n = 1 (первое число: 1)
+print("Числа, меньшие", a, ":")
+
+while True:
+    if n == 1:
+        current = 1
+    else:
+        current = 1 + 1 / n
+    
+    if current >= a:  # Если число стало не меньше a, выходим из цикла
+        break
+    print(f"{current:.6f}")
+    n += 1
