@@ -1,0 +1,45 @@
+import random
+
+print("а) 8 случайных вещественных чисел (0 ≤ ni < 1):")
+for _ in range(8):
+    num = random.random()  # random() возвращает число в диапазоне [0.0, 1.0)
+    print(f"{num:.6f}")
+
+print("\nб) k случайных вещественных чисел (0 ≤ ni < 1). Введите k: ", end="")
+k = int(input())
+print(f"k = {k}")
+for _ in range(k):
+    num = random.random()
+    print(f"{num:.6f}")
+
+print("\nв) 15 случайных вещественных чисел (25 ≤ ni < 26):")
+for _ in range(15):
+    num = 25 + random.random()  # добавляем 25 к числу из [0, 1)
+    print(f"{num:.6f}")
+
+print("\nг) 20 случайных вещественных чисел (0 ≤ ni < 15):")
+for _ in range(20):
+    num = random.uniform(0, 15)  # uniform(a, b) возвращает число в [a, b)
+    print(f"{num:.6f}")
+
+print("\nд) Случайное натуральное число k ≤ a и k случайных чисел (0 ≤ ni < b). Введите a и b: ", end="")
+a, b = map(int, input().split())
+k = random.randint(1, a)  # randint(1, a) — случайное целое от 1 до a включительно
+print(f"k = {k}, a = {a}, b = {b}")
+for _ in range(k):
+    num = random.uniform(0, b)
+    print(f"{num:.6f}")
+
+print("\nе) 10 случайных вещественных чисел (–40 ≤ ni < 40):")
+for _ in range(10):
+    num = random.uniform(-40, 40)
+    print(f"{num:.6f}")
+
+print("\nж) Случайное k ≤ m и k чисел (a ≤ ni < b). Введите m, a и b: ", end="")
+m, a, b = map(float, input().split())
+m = int(m)  # преобразуем m в целое, т.к. k должно быть натуральным
+k = random.randint(1, m)
+print(f"k = {k}, m = {m}, a = {a}, b = {b}")
+for _ in range(k):
+    num = random.uniform(a, b)
+    print(f"{num:.6f}")
