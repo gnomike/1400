@@ -1,0 +1,39 @@
+# Количество работников и месяцев
+workers = 12
+months = 3
+
+# Создаём матрицу для хранения зарплат (12 строк × 3 столбца)
+salaries = [[0] * months for _ in range(workers)]
+
+print("Введите зарплаты работников по месяцам (по одному работнику за раз):")
+for i in range(workers):
+    print(f"Зарплаты работника {i + 1} за 3 месяца (через пробел): ", end="")
+    row = list(map(float, input().split()))
+    for j in range(months):
+        salaries[i][j] = row[j]
+
+# а) Максимальная зарплата из указанных в таблице
+max_salary = max(salaries[i][j] for i in range(workers) for j in range(months))
+print(f"\nа) Максимальная зарплата в таблице: {max_salary:.2f} руб.")
+
+# б) Порядковый номер работника, получившего за квартал наибольшую сумму
+quarter_sums = []
+for i in range(workers):
+    worker_sum = sum(salaries[i])
+    quarter_sums.append(worker_sum)
+
+max_quarter_sum = max(quarter_sums)
+winner_worker = quarter_sums.index(max_quarter_sum) + 1
+
+print(f"б) Работник с наибольшей суммой за квартал: №{winner_worker} ({max_quarter_sum:.2f} руб.)")
+
+# в) В каком месяце общая зарплата всех работников была максимальной
+month_totals = []
+for j in range(months):
+    month_total = sum(salaries[i][j] for i in range(workers))
+    month_totals.append(month_total)
+
+max_month_total = max(month_totals)
+best_month = month_totals.index(max_month_total) + 1
+
+print(f"в) Максимальная общая зарплата была в месяце {best_month} ({max_month_total:.2f} руб.)")
