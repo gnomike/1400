@@ -1,0 +1,30 @@
+import random
+
+# Ввод значений a и b с клавиатуры
+print("Введите значения a и b: ", end="")
+a, b = map(int, input().split())
+
+
+# Генерация случайных натуральных чисел m и n (от 1 до 20 включительно)
+m = random.randint(1, 20)
+n = random.randint(1, 20)
+
+print(f"Случайное число m (1 ≤ m ≤ 20): {m}")
+print(f"Случайное число n (1 ≤ n ≤ 20): {n}")
+
+
+# Генерация n целых чисел в диапазоне от a до b включительно
+print(f"\n{n} случайных целых чисел в диапазоне от {a} до {b} включительно:")
+random_integers = []
+for _ in range(n):
+    num = random.randint(a, b)
+    random_integers.append(num)
+    print(num)
+
+# Генерация m неотрицательных случайных вещественных чисел, не превосходящих n
+print(f"\n{m} случайных вещественных чисел (0 ≤ ni ≤ {n}):")
+random_floats = []
+for _ in range(m):
+    num = random.uniform(0, n)  # uniform(0, n) даёт числа в диапазоне [0, n]
+    random_floats.append(num)
+    print(f"{num:.6f}")
