@@ -1,0 +1,40 @@
+# Количество студентов и предметов
+students = 14
+subjects = 3
+
+# Создаём матрицу для хранения оценок (14 строк × 3 столбца)
+marks = [[0] * subjects for _ in range(students)]
+
+print("Введите оценки студентов по предметам (по одному студенту за раз):")
+for i in range(students):
+    print(f"Оценки студента {i + 1} по 3 предметам (через пробел): ", end="")
+    row = list(map(int, input().split()))
+    for j in range(subjects):
+        marks[i][j] = row[j]
+
+# а) Количество студентов, сдавших сессию без двоек
+no_twos_students = 0
+for i in range(students):
+    if 2 not in marks[i]:  # Проверяем, что в строке оценок нет двоек
+        no_twos_students += 1
+print(f"\nа) Количество студентов без двоек: {no_twos_students}")
+
+# б) Количество предметов, по которым были получены только оценки «5» и «4»
+good_subjects_count = 0
+for j in range(subjects):
+    # Флаг: предположим, что предмет соответствует условию
+    only_good_marks = True
+    for i in range(students):
+        # Если нашли оценку, отличную от 4 или 5, сбрасываем флаг
+        if marks[i][j] not in [4, 5]:
+            only_good_marks = False
+            break  # Выходим из цикла, т.к. условие уже не выполняется
+    if only_good_marks:
+        good_subjects_count += 1
+print(f"б) Количество предметов только с оценками «4» и «5»: {good_subjects_count}")
+
+# в) Количество двоек по каждому предмету
+print("\nв) Количество двоек по предметам:")
+for j in range(subjects):
+    twos_count = sum(1 for i in range(students) if marks[i][j] == 2)
+    print(f"Предмет {j + 1}: {twos_count} двоек")
