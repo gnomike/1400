@@ -1,0 +1,38 @@
+import random
+
+# а) 10 случайных целых чисел от 0 до 10 включительно
+print("а) 10 случайных целых чисел (0 ≤ ni ≤ 10):")
+for _ in range(10):
+    num = random.randint(0, 10)
+    print(num)
+
+# б) k случайных целых чисел от 0 до a включительно
+print("\nб) k случайных целых чисел (0 ≤ ni ≤ a). Введите k и a: ", end="")
+k, a = map(int, input().split())
+print(f"k = {k}, a = {a}")
+for _ in range(k):
+    num = random.randint(0, a)
+    print(num)
+
+# в) 20 случайных целых чисел от 10 до 20 включительно
+print("\nв) 20 случайных целых чисел (10 ≤ ni ≤ 20):")
+for _ in range(20):
+    num = random.randint(10, 20)
+    print(num)
+
+# г) k случайных целых чисел от –10 до a включительно
+print("\nг) k случайных целых чисел (–10 ≤ ni ≤ a). Введите k и a: ", end="")
+k, a = map(int, input().split())
+print(f"k = {k}, a = {a}")
+for _ in range(k):
+    num = random.randint(-10, a)
+    print(num)
+
+# д) случайное k ≤ 15 и k чисел от a до b включительно
+print("\nд) Случайное k ≤ 15 и k чисел (a ≤ ni ≤ b). Введите a и b: ", end="")
+a, b = map(int, input().split())
+k = random.randint(1, 15)  # случайное натуральное k от 1 до 15 включительно
+print(f"k = {k}, a = {a}, b = {b}")
+for _ in range(k):
+    num = random.randint(a, b)
+    print(num)
