@@ -1,0 +1,28 @@
+# Количество спортсменов и видов спорта
+athletes = 8
+sports = 5
+
+# Создаём матрицу для хранения баллов (8 строк × 5 столбцов)
+scores = [[0] * sports for _ in range(athletes)]
+
+print("Введите баллы спортсменов по видам спорта (по одному спортсмену за раз):")
+for i in range(athletes):
+    print(f"Баллы спортсмена {i + 1} по 5 видам спорта (через пробел): ", end="")
+    row = list(map(float, input().split()))
+    for j in range(sports):
+        scores[i][j] = row[j]
+
+# а) Максимальная из оценок в таблице
+max_score = max(scores[i][j] for i in range(athletes) for j in range(sports))
+print(f"\nа) Максимальная оценка в таблице: {max_score:.2f} баллов")
+
+# б) Сколько баллов набрал победитель соревнований (спортсмен с максимальной суммой баллов)
+total_scores = []
+for i in range(athletes):
+    athlete_total = sum(scores[i])
+    total_scores.append(athlete_total)
+
+winner_score = max(total_scores)
+winner_index = total_scores.index(winner_score) + 1
+
+print(f"б) Победитель соревнований — спортсмен {winner_index} с результатом: {winner_score:.2f} баллов")
